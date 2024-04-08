@@ -1,0 +1,18 @@
+.header {
+    background-color: #f0f0f0; /* background color */
+    padding: 10px;
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .header-content h1 {
+    font-size: 15px; /* Adjust the font size as needed */
+  }
+  
+  /* .header-content lightning-icon {
+    width: 24px; 
+    height: 24px; 
+  } */

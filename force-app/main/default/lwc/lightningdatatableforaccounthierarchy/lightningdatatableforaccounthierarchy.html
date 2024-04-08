@@ -1,0 +1,54 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-07-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <div class="slds-box">
+  <div class="header">
+    <div class="header-content">
+        <lightning-icon icon-name="standard:account" alternative-text="Account Icon"></lightning-icon>&nbsp;&nbsp;&nbsp;&nbsp;
+        <h1><b>{pageTitle}</b></h1>
+    </div>
+  </div>
+
+  <template if:true={datalist}>
+    <div>
+        <lightning-datatable
+        key-field="Id"
+        data={data}
+        show-row-number-column
+        onsave={handleSave}
+        draft-values={saveDraftValue}
+        columns={columns}
+        onrowaction={handleRowAction} 
+        onrowselection={getSelectedIdAction}>
+
+        </lightning-datatable>
+    </div>
+  </template>
+
+
+
+ 
+
+  <template if:false={datalist}>
+    <div>
+      <br /><br /><br /><br />
+      <center>No Child Records found.</center>
+      <br /><br /><br /><br />
+  </div>
+</template> 
+
+<br>
+  <div slot="footer"> 
+    <center><lightning-button title="Delete" label="Delete Selected Row" size="small"  disabled={isDeleteButtonDisabled} variant="brand" icon-name="utility:delete" icon-position="right" onclick={deleteAccountRowAction}></lightning-button> &nbsp;&nbsp;
+    <lightning-button title="Remove" label="Remove Selected Row" size="small"  disabled={isDeleteButtonDisabled} variant="brand" icon-name="utility:delete" icon-position="right" onclick={removeAccountRowAction}></lightning-button></center>
+
+  </div>
+
+
+</div>
+</template>
